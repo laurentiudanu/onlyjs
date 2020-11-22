@@ -49,8 +49,13 @@ body {
 }
 body.loaded-doc {opacity: 1;}
 
+.m-h {width: 100%; padding: 16px 0; text-align: center; position: fixed; left: 0; top: 0; background-color: #bebebe; z-index: 400; box-shadow: 0 0 16px rgba(0,0,0,0.1);}
+  .doc-scrolled .m-h p {color: red;}
 
 .wrapper {padding: 24vh 32vw 0 32vw; position: relative; z-index: 50;}
+
+.dummy-content {padding: 40px 0;}
+  .dummy-content p:not(:last-of-type) {margin-bottom: 16px;}
 
 .tabs {margin-bottom: 40px;}
   .tabs .tab-nav {margin-bottom: 16px}
@@ -63,4 +68,16 @@ body.loaded-doc {opacity: 1;}
 
 .copy-block {margin-bottom: 32px;}
 
-select {background-color: var(--color-bg); padding: 12px; font: 16px/1.7em "Helvetica", sans-serif;}
+select {background-color: var(--color-bg); padding: 12px; font: 16px/1.7em "Helvetica", sans-serif; margin-bottom: 40px;}
+
+.accordion .accordion-entry {margin-bottom: 32px;}
+.accordion .ae-heading {
+  background-color: var(--color-bg);
+  padding: 8px;
+  position: relative;
+  cursor: pointer;
+}
+  .accordion .ae-heading span {display: inline-block; vertical-align: top; position: absolute; right: 8px; top: 8px; font-weight: 700;}
+.accordion .ae-content {display: none; padding: 16px 0 0 0;}
+  .accordion .accordion-entry.active .ae-content {display: block;}
+

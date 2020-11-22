@@ -14,7 +14,6 @@ ready(() => {
   }
 
   if(document.querySelector(".tabs")){
-  	console.log("tabs detected");
   	// select the first tab content instance and make it active
   	document.querySelector(".tabs .tab-entry").classList.add("active");
 
@@ -28,7 +27,7 @@ ready(() => {
         document.querySelector(tabToShow).classList.add("active");
         e.preventDefault(); 
       });   
-    })
+    });
   }
 
   //check if element has a specific class name
@@ -58,6 +57,65 @@ ready(() => {
   document.getElementById('selector').addEventListener('change', function() {
     console.log('You selected: ', this.value);
   });
+
+  // get element distance from top
+  let adft = document.querySelector(".accordion").offsetTop;
+  console.log("distance from top: "+adft);
+
+
+  // scroll onto view
+  document.querySelector(".accordion").scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+
+  // begin on scroll action
+
+  let last_known_scroll_position = 0;
+  let ticking = false;
+
+  function doSomething(scroll_pos) {
+    // get main header element height
+    let mhh = document.querySelector(".m-h").clientHeight;
+    console.log(last_known_scroll_position);
+    if(last_known_scroll_position > mhh) {
+      document.body.classList.add("doc-scrolled");
+    }
+    else {
+     document.body.classList.remove("doc-scrolled"); 
+    }
+  }
+
+  window.addEventListener('scroll', function(e) {
+    last_known_scroll_position = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        doSomething(last_known_scroll_position);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
+
+  // end on scroll action
+
+  document.querySelectorAll(".accordion .ae-heading").forEach(aheading => {
+    aheading.addEventListener("click", function(e){
+      document.querySelectorAll(".accordion .accordion-entry").forEach(aentry => {
+        aentry.classList.remove("active");
+      });
+      document.querySelectorAll(".accordion .ae-heading span").forEach(hindicator => {
+        hindicator.innerHTML = "+";
+      });
+      if (aheading.lastElementChild.innerHTML == "+") {
+        aheading.lastElementChild.innerHTML = "-";
+      } else {
+        aheading.lastElementChild.innerHTML = "+";
+      }
+      aheading.parentElement.classList.toggle("active");
+      e.preventDefault(); 
+    });   
+  });
+
 
 
 });
