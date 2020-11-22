@@ -45,6 +45,7 @@ body {
   position: relative;
   opacity: 0;
   transition: all 480ms ease-in-out;
+  --color-bg: #f1f1f1;
 }
 body.loaded-doc {opacity: 1;}
 
@@ -61,3 +62,5 @@ body.loaded-doc {opacity: 1;}
 .appended {cursor: pointer; text-decoration: underline;}
 
 .copy-block {margin-bottom: 32px;}
+
+select {background-color: var(--color-bg); padding: 12px; font: 16px/1.7em "Helvetica", sans-serif;}

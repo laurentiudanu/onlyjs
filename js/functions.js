@@ -4,11 +4,11 @@ var ready = (callback) => {
 }
 
 ready(() => { 
-	document.querySelector("body").classList.add("loaded-doc");
+	document.body.classList.add("loaded-doc");
 
   if(document.querySelector(".m-h .nav-trigger")){
     document.querySelector(".m-h .nav-trigger").addEventListener("click", function(e){ 
-      document.querySelector("body").classList.toggle("mobile-nav-active");
+      document.body.classList.toggle("mobile-nav-active");
       e.preventDefault(); 
     });
   }
@@ -49,6 +49,7 @@ ready(() => {
 
 
   var sel = document.getElementById("selector");
+  sel.value = '3';
   var selectedValText = sel.options[sel.selectedIndex].text;
   var selectedVal = sel.options[sel.selectedIndex].getAttribute("value");
   console.log("Selected option text: "+selectedValText);
