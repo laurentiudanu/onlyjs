@@ -31,5 +31,20 @@ ready(() => {
     })
   }
 
-  
+  //check if element has a specific class name
+  if(document.querySelector("body").classList.contains("loaded-doc")) {
+    console.log("document has been loaded");
+  }
+
+  var el = document.querySelector(".copy-block");
+  // append to the element's content
+  el.innerHTML += "<p class='appended'>Hello World appended!</p>";
+  // prepend to the element's content
+  el.innerHTML = "<p class='prepended'>Hello World prepended!</p>" + el.innerHTML;
+
+  document.querySelector(".copy-block .appended").addEventListener("click", function(e){ 
+    alert("appended has been clicked");
+    e.preventDefault(); 
+  });
+
 });
