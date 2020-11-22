@@ -47,4 +47,16 @@ ready(() => {
     e.preventDefault(); 
   });
 
+
+  var sel = document.getElementById("selector");
+  var selectedValText = sel.options[sel.selectedIndex].text;
+  var selectedVal = sel.options[sel.selectedIndex].getAttribute("value");
+  console.log("Selected option text: "+selectedValText);
+  console.log("Selected option value: "+selectedVal);
+
+  document.getElementById('selector').addEventListener('change', function() {
+    console.log('You selected: ', this.value);
+  });
+
+
 });

@@ -57,3 +57,7 @@ body.loaded-doc {opacity: 1;}
     .tabs .tab-nav a.active {color: red;}
   .tabs .tab-entry {display: none;}
     .tabs .tab-entry.active {display: block}
+
+.appended {cursor: pointer; text-decoration: underline;}
+
+.copy-block {margin-bottom: 32px;}
