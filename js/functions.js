@@ -4,6 +4,8 @@ var ready = (callback) => {
 }
 
 ready(() => { 
+  // carousel alternative -> https://glidejs.com/docs/
+
 	document.body.classList.add("loaded-doc");
 
   if(document.querySelector(".m-h .nav-trigger")){
