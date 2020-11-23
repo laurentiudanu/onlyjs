@@ -8,14 +8,14 @@ ready(() => {
 
 	document.body.classList.add("loaded-doc");
 
-  if(document.querySelector(".m-h .nav-trigger")){
+  if(document.body.contains(document.querySelector(".m-h .nav-trigger"))) {
     document.querySelector(".m-h .nav-trigger").addEventListener("click", function(e){ 
       document.body.classList.toggle("mobile-nav-active");
       e.preventDefault(); 
     });
   }
 
-  if(document.querySelector(".tabs")){
+  if(document.body.contains(document.querySelector(".tabs"))) {
   	// select the first tab content instance and make it active
   	document.querySelector(".tabs .tab-entry").classList.add("active");
 
