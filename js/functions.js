@@ -102,19 +102,14 @@ ready(() => {
 
   document.querySelectorAll(".accordion .ae-heading").forEach(aheading => {
     aheading.addEventListener("click", function(e){
-      document.querySelectorAll(".accordion .accordion-entry").forEach(aentry => {
-        aentry.classList.remove("active");
-      });
-      document.querySelectorAll(".accordion .ae-heading span").forEach(hindicator => {
-        hindicator.innerHTML = "+";
-      });
+      aheading.parentElement.classList.toggle("active");
       if (aheading.lastElementChild.innerHTML == "+") {
         aheading.lastElementChild.innerHTML = "-";
       } else {
         aheading.lastElementChild.innerHTML = "+";
       }
-      aheading.parentElement.classList.toggle("active");
       e.preventDefault(); 
+      //e.stopPropagation();
     });   
   });
 

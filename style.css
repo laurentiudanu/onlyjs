@@ -81,3 +81,15 @@ select {background-color: var(--color-bg); padding: 12px; font: 16px/1.7em "Helv
 .accordion .ae-content {display: none; padding: 16px 0 0 0;}
   .accordion .accordion-entry.active .ae-content {display: block;}
 
+.sticky-wrapper {
+  padding: 32px 0;
+  position: relative;
+}
+.sticky-wrapper .sticky {
+  height: 300px;
+  background-color: purple;
+  box-shadow: 0px 16px 24px yellow;
+  position: sticky;
+  top: 0;
+}
+
