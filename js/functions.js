@@ -5,8 +5,8 @@ var ready = (callback) => {
 
 ready(() => { 
   // carousel alternative -> https://glidejs.com/docs/
-
-	document.body.classList.add("loaded-doc");
+  document.body.classList.add("loaded-doc");
+  console.log("loaded document");
 
   if(document.body.contains(document.querySelector(".m-h .nav-trigger"))) {
     document.querySelector(".m-h .nav-trigger").addEventListener("click", function(e){ 
